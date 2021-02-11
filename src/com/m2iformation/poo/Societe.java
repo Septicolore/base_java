@@ -4,28 +4,18 @@ public class Societe {
 	private String nom;
 	private String ville;
 	
-	
-	// Passage par copie
-	public int addNumber(int number) {
-		number++;
-		System.out.println(number);
-		return number;
+	public Societe() {
 	}
-	
-	// Passage par copie
-	public String addPdg(String pdg) {
-		pdg = pdg.toUpperCase();
-		System.out.println(pdg);
-		return pdg;
+
+	public Societe(String nom) {
+		this.nom = nom;
 	}
-	
-	// Passage par référence
-	public void addSociete(Societe soc) {
-		soc.setNom(soc.getNom().toUpperCase());
-		soc.setVille(soc.getVille().toUpperCase());
-		System.out.println(soc);
+
+	public Societe(String nom, String ville) {
+		this.nom = nom;
+		this.ville = ville;
 	}
-	
+
 	public String getNom() {
 		return nom;
 	}
