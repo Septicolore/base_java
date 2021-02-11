@@ -2,7 +2,7 @@ package com.m2iformation.poo;
 
 public class Societe {
 	private String nom;
-	private String ville;
+	private Adresse adresse;
 	
 	public Societe() {
 	}
@@ -11,9 +11,9 @@ public class Societe {
 		this.nom = nom;
 	}
 
-	public Societe(String nom, String ville) {
+	public Societe(String nom, Adresse ad) {
 		this.nom = nom;
-		this.ville = ville;
+		this.adresse = ad;
 	}
 
 	public String getNom() {
@@ -23,18 +23,18 @@ public class Societe {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-	
-	public String getVille() {
-		return ville;
+
+	public final Adresse getAdresse() {
+		return adresse;
 	}
-	
-	public void setVille(String ville) {
-		this.ville = ville;
+
+	public final void setAdresse(Adresse adresse) {
+		this.adresse = adresse;
 	}
 
 	@Override
 	public String toString() {
-		return "Societe [nom=" + nom + ", ville=" + ville + "]";
+		return "Societe [nom=" + nom + ", adresse=" + adresse + "]";
 	}
 	
 }
