@@ -3,6 +3,7 @@ package com.m2iformation.tp_ecole;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class Ecole {
 	static List<Eleve> listeEleves = Arrays.asList(
@@ -27,22 +28,32 @@ public class Ecole {
 	));
 
 	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
 		for (Cours c: listeCours) {
 			System.out.println("---------------- " + c.getNom() + " ----------------");
 
 			for (Eleve el:listeEleves) {
 				if (c.getAnnee() == el.getAnnee()){
+
 					System.out.printf(
-							"%s %s - %s : %d heures.%n",
+							"Est-ce que %s %s, c'est inscrit dans le cours de %s. [O/n] ",
 							el.getPrenom(),
 							el.getNom(),
-							c.getNom(),
-							c.getNbHeures()
-					);
+							c.getNom()
+							);
+					String reponse = sc.nextLine();
+					if (reponse.equals("") || reponse.toLowerCase().equals("o")){
+						c.inscription(el);
+					}
 				}
 			}
 
 		}
 
+		for (Cours c:listeCours) {
+			System.out.println(c);
+		}
 	}
 }

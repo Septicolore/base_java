@@ -1,10 +1,13 @@
 package com.m2iformation.tp_ecole;
 
+import java.util.ArrayList;
+
 public class Cours {
 	// un nom , un nombre d’heures et une année
 	private String nom;
 	private int nbHeures;
 	private int annee;
+	private ArrayList<Eleve> eleves = new ArrayList<>();
 
 	public Cours() {
 	}
@@ -13,6 +16,10 @@ public class Cours {
 		this.nom = nom;
 		this.nbHeures = nbHeures;
 		this.annee = annee;
+	}
+
+	public void inscription(Eleve eleve){
+		this.eleves.add(eleve);
 	}
 
 	public String getNom() {
@@ -45,6 +52,7 @@ public class Cours {
 				"nom='" + nom + '\'' +
 				", nbHeures=" + nbHeures +
 				", annee=" + annee +
+				", eleves=" + eleves +
 				'}';
 	}
 }
